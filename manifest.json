@@ -1,0 +1,20 @@
+{
+  "manifest_version": 2,
+
+  "name": "Mattermost translation helper",
+  
+  "description": "This extension sends sentences to IBM Watson Translate API, helping you to translate Mattermost",
+  "version": "1.11",
+  "permissions": [ "storage" ],
+
+  "icons": { "16": "mattermost_16.png",
+           "48": "mattermost_48.png",
+          "128": "mattermost_128.png" },  
+  "options_page": "popup.html",
+  "content_scripts": [
+    {
+      "matches": ["https://translate.mattermost.com/*/translate/*"],
+      "js": ["jquery-2.1.4.min.js", "mattermost_translate.js"]
+      }
+  ]
+ }
